@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Tax</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <header>Cookie tax</header>
+    
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="tabs(event, 'GC')">Gain en capital</button>
+    <button class="tablinks" onclick="tabs(event, 'Revenue')">Calcul Revenu</button>
+    <button class="tablinks" onclick="tabs(event, 'Caracteristiques')">Caracteristiques fiscales</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="GC" class="tabcontent">
+        <h2>Gain en capital</h3>
+        <p>Capital gain calculator</p>
+        <input id="PD" type="number" placeholder="PD">
+        <br><br>
+        <input id="PBR" type="number" placeholder="PBR">
+        <br>
+        <p>Lien de dépendance : <input type="checkbox" id="ldCheckbox" onclick="ldToggle()"></p> 
+        <p>SPA : <input type="checkbox" id="spaCheckbox" onclick="spaToggle()"></p> 
+        <button onclick="gcButton()" id="btn1">Calcul</button>
+        <br>
+        <p id="gci-el">GCI : </p>
+        <p id="gci-tax-el">Montant a payer : </p>
+        <p class="notvisible" id="gci-text-el">Le gain en capital est imposable. </p>
+    </div>
+  
+  <div id="Revenue" class="tabcontent">
+    <h2>Calcul du revenu</h3>
+        <p>Revenue calculator</p>
+        <input id="Income" type="number" placeholder="Revenu">
+        <br><br>
+        <input id="Charge" type="number" placeholder="Depense">
+        <br><br>
+        <button onclick="revenuButton()" id="btn1">Calcul</button>
+        <br>
+        <p id="tax-el">Impot : </p>
+  </div>
+  
+  <div id="Caracteristiques" class="tabcontent">
+    <h2>Caracteristiques fiscales</h3>
+    <p>Contribuable : </p>
+  </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
