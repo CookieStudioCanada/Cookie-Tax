@@ -113,8 +113,5 @@ function tabs(evt, cityName) {
     evt.currentTarget.className += " active";
   }
 
-<<<<<<< Updated upstream
   tabs(Event, 'Menu') // pas certain de comprendre pourquoi Event avec un E majuscule fonctionne, mais tant mieux...
-=======
-  tabs(Event, 'Menu') // pas certain de comprendre pourquoi Event avec un E majuscule fonctionne, mais tant mieux...
->>>>>>> Stashed changes
+
