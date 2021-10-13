@@ -1,57 +1,81 @@
 body {
-    background: rgb(212, 233, 135);
+    background: rgb(255, 247, 132);
     color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
 header { 
-    background: cornsilk;
     width: 200px;
-    text-align: center;
     font-weight: bold;
-    font-size: xx-large;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border: 1px solid;
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
-.notvisible {
+.image {
+  border: 2px solid;
+}
+
+.instructions {
+  font-style: italic;
+}
+
+.result {
+  font-weight: bold;
+}
+
+.hidden {
   display: none; /* Pour ne pas afficher le texte du GC, mais pas encore capable de l'activer. */
+  font-style: italic; /* Devrait etre ailleurs, mais fonctionne pour le moment. */
 }
 
 /* Style the tab */
 .tab {
-    overflow: hidden;
-    border: none;
-    background-color: cornsilk;
+  float: left;
+  width: 10%;
+  height: 300px;
   }
   
   /* Style the buttons that are used to open the tab content */
   .tab button {
-    background-color: inherit;
-    float: left;
+    display: block;
+    background-color: rgb(243, 212, 33);
+    color: black;
+    padding: 22px 10px;
+    width: 100%;
     border: none;
     outline: none;
+    text-align: left;
     cursor: pointer;
-    width: 200px;
-    padding: 14px 16px;
     transition: 0.3s;
   }
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: rgb(175, 226, 128);
+    background-color: rgb(255, 243, 77);
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: rgb(145, 207, 93);
+    background-color: rgb(255, 240, 24);
   }
   
   /* Style the tab content */
   .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
+    float: left;
+    padding: 0px 50px;
+    width: 25%;
+    border-left: none;
+    height: 300px;
+  }
+
+  /* Right content... mais manque de quoi*/
+  .right {
+    float: left;
+    width: 35%;
+    border-left: none;
+    height: 300px;
   }
 
   button {
