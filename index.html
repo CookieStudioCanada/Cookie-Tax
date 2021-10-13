@@ -1,54 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Tax</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Tax</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>Cookie tax</header>
+    <header>Cookie tax.</header><img class="image" src="CookieTax.png">
+  <br><br>
     
 <!-- Tab links -->
 <div class="tab">
-    <button class="tablinks" onclick="tabs(event, 'GC')">Gain en capital</button>
-    <button class="tablinks" onclick="tabs(event, 'Revenue')">Calcul Revenu</button>
-    <button class="tablinks" onclick="tabs(event, 'Caracteristiques')">Caracteristiques fiscales</button>
-  </div>
+  <button class="tablinks" onclick="tabs(event, 'Menu')">Menu</button>
+  <button class="tablinks" onclick="tabs(event, 'GC')">Gain en capital</button>
+  <button class="tablinks" onclick="tabs(event, 'Revenu')">Calcul Revenu</button>
+  <button class="tablinks" onclick="tabs(event, 'InteretCompose')">Intérêts composés</button>
+  <button class="tablinks" onclick="tabs(event, 'TableImpot')">Table d'impôts</button>
+  <button class="tablinks" onclick="tabs(event, 'NousJoindre')">Nous joindre</button>
+</div>
   
   <!-- Tab content -->
+
+  <div id="Menu" class="tabcontent">
+    <h2>Bienvenue.</h3>
+      <p class="instructions">Instructions</p>
+  </div>
+
+
   <div id="GC" class="tabcontent">
-        <h2>Gain en capital</h3>
-        <p>Capital gain calculator</p>
-        <input id="PD" type="number" placeholder="PD">
-        <br><br>
-        <input id="PBR" type="number" placeholder="PBR">
-        <br>
-        <p>Lien de dépendance : <input type="checkbox" id="ldCheckbox" onclick="ldToggle()"></p> 
-        <p>SPA : <input type="checkbox" id="spaCheckbox" onclick="spaToggle()"></p> 
-        <button onclick="gcButton()" id="btn1">Calcul</button>
-        <br>
-        <p id="gci-el">GCI : </p>
-        <p id="gci-tax-el">Montant a payer : </p>
-        <p class="notvisible" id="gci-text-el">Le gain en capital est imposable. </p>
-    </div>
-  
-  <div id="Revenue" class="tabcontent">
-    <h2>Calcul du revenu</h3>
-        <p>Revenue calculator</p>
-        <input id="Income" type="number" placeholder="Revenu">
-        <br><br>
-        <input id="Charge" type="number" placeholder="Depense">
-        <br><br>
-        <button onclick="revenuButton()" id="btn1">Calcul</button>
-        <br>
-        <p id="tax-el">Impot : </p>
+    <h2>Gain en capital</h3>
+    <p class="instructions">Instructions</p>
+    <input id="PD" type="number" placeholder="PD">
+    <br><br>
+    <input id="PBR" type="number" placeholder="PBR">
+    <br>
+    <p>Lien de dépendance : <input  type="checkbox" id="ldCheckbox" onclick="ldToggle()"></p> 
+    <p>SPA : <input type="checkbox" id="spaCheckbox" onclick="spaToggle()"></p> 
+    <button onclick="gcButton()" id="btn1">Calcul</button>
+    <br>
+    <p class="result" id="gci-el">GCI : </p>
+    <p class="result" id="gci-tax-el">Montant a payer : </p>
   </div>
   
-  <div id="Caracteristiques" class="tabcontent">
-    <h2>Caracteristiques fiscales</h3>
-    <p>Contribuable : </p>
+  <div id="Revenu" class="tabcontent">
+    <h2>Revenu</h3>
+      <p class="instructions">Instructions</p>
+      <input id="Income" type="number" placeholder="Revenu">
+      <br><br>
+      <input id="Charge" type="number" placeholder="Depense">
+      <br><br>
+      <button onclick="revenuButton()" id="btn2">Calcul</button>
+      <br>
+      <p id="tax-el">Impot : </p>
+  </div>
+
+  <div id="InteretCompose" class="tabcontent">
+    <h2>Calculatrice - Intérêts composés</h3>
+      <p class="instructions">Instructions</p>
+      <input id="Placement" type="number" placeholder="Placement Initial">
+      <br><br>
+      <input id="Versement" type="number" placeholder="Versement / mois">
+      <br><br>
+      <input id="Interet" type="number" placeholder="Taux d'intérêts">
+      <br><br>
+      <input id="Annee" type="number" placeholder="Nombre d'année">
+      <br><br>
+      <button onclick="placementButton()" id="btn3">Calcul</button>
+      <br>
+      <p id="placement-el">Placements : </p>
+      <p class="hidden" id="placement-text-el"> Saviez-vous que : Les placements c'est bien!  <!-- Serait interessant d'avoir des hyperliens qui mene a ce concept. --> 
+      </p>
+  </div>
+
+  <div id="TableImpot" class="tabcontent">
+    <h2>Table - Impôts</h3>
+    <p class="instructions">Instructions</p>
+    <img class="image" src="table.png"> <!-- Comment rendre l'image accessible sur internet? À voir --> 
+    <!-- Il serait bien d'avoir des tables pour chacun des paliers, plus simple... --> 
+  </div>
+
+  <div id="NousJoindre" class="tabcontent">
+    <h2>Nous joindre</h3>
+    <p>Contact : <a href="mailto:peter@cookietax.com">Peter the taxman.</a></p>
+  </div>
+
+  <div id="gcText-el" class="hidden">
+    <h2>Saviez-vous que...</h3>
+    <p class="right" class="hidden" id="gci-text-el">Saviez-vous que : <br><br>
+      Le gain en capital est imposable. Pour les particuliers qui disposent d'actions de sociétés privées, il est possible, dans certaines circonstanctes, de bénéficier de la déduction pour gain en capital <br>
+      Pour plus de détails, consulter l'article <a href="https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/exoneration-cumulative-gain-capital/">110.6 de la Loi de l'impôt sur le revenu (LIR)</a>. <!-- Serait interessant d'avoir des hyperliens qui mene a ce concept. --> 
+    </p> <!-- possible d'automatiquement ouvrir dans une nouvelle page? --> 
+    <p class="right" class="hidden" id="gci-spa-text-el"> Saviez-vous que : <br><br>
+      Le gain en capital est imposable. Surtout pour les mechantes corporations. <br><br>
+      Toutefois, la creation d'un gain en capital entraine la creation d'un compte de CDC et d'un compte de IMRTD.  <!-- Serait interessant d'avoir des hyperliens qui mene a ce concept. --> 
+    </p> <!-- Peut-on integrer seulement des elements specifiques du texte, sans necessairement tout changer le texte... outre le += qui ajoute a la fin... le probleme est que JS ne semble pas reconnaitre les <br> --> 
   </div>
 
     <script src="index.js"></script>
